@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Layout from '../layout'
 
 Vue.use(VueRouter)
 
@@ -12,8 +12,17 @@ const routes = [
   },
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Layout',
+    component: Layout,
+    redirect: '/Home',
+    children:[{
+      path: 'Home',
+      name: 'Home',
+      component: () => import('../views/home'),
+      meta:{
+        roles: ['admin','user']
+      }
+    }]
   }
 ]
 
