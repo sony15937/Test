@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import api from './api'
+import i18n from "./i18n"
 
 import './permission'
 import './style/index.scss'
@@ -23,5 +24,6 @@ Vue.use(InfiniteLoading,{})
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
