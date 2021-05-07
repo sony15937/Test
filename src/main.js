@@ -5,6 +5,7 @@ import store from './store'
 import api from './api'
 
 import './permission'
+import './style/index.scss'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = api
