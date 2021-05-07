@@ -1,0 +1,83 @@
+@import './variables.scss';
+@import './sidebar.scss';
+
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  .el-header{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    box-shadow: 100px 100px 100px #304156;
+  }
+
+  .el-container{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .el-main{
+    //-ms-overflow-style: none;  /* IE and Edge hidden scrollbar*/
+    scrollbar-width: none;  /* Firefox hidden scrollbar*/
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 1px 4px rgb(0 21 41 / 25%);
+  }
+  .el-main::-webkit-scrollbar {/*hidden scrollbar*/
+    display: none;
+  }
+
+  .right-menu {
+    float: right;
+    height: 100%;
+    line-height: 0;
+
+    .avatar-container {
+      margin-right: 10px;
+
+      .avatar-wrapper {
+        margin-top: 2px;
+        position: relative;
+
+        .user-avatar {
+          cursor: pointer;
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  :focus {
+    outline: none
+  }
+
+  .el-card__header{
+    margin: 0;
+    padding: 0;
+  }
+
+  .el-card__body{
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    color: #bfcbd9;
+    font-size: 15px;
+    text-align: left;
+    background: rgb(255,255,255);
+  }
+
+  .select-popper {//el-select
+    z-index: 4000 !important;
+    top: auto !important;
+    left: auto !important
+  }
+
+}
