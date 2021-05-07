@@ -6,6 +6,7 @@ import api from './api'
 
 import './permission'
 import './style/index.scss'
+import './assets/icon'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = api
