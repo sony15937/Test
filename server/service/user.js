@@ -11,6 +11,7 @@ router.post('/user/add',async (req, res) => {
 //login
 router.get('/user/get/:id',async (req, res) => {
     const users = await user.findOne({id:req.params.id})
+        .populate('site')
     res.send(users)
 })
 

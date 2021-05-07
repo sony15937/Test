@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const site = require('./site')
 
-const user = mongoose.model('user',new mongoose.Schema({
+const user = mongoose.model('users',new mongoose.Schema({
     id:{
         type:String
     },
@@ -15,6 +15,6 @@ const user = mongoose.model('user',new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref:site
     }]
-}),'user')
+}),'users')
 
 module.exports = user
