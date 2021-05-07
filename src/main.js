@@ -7,7 +7,7 @@ import i18n from "./i18n"
 
 import './permission'
 import './style/index.scss'
-import './assets/icon'
+import './assets/icons'
 
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
