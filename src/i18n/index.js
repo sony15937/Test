@@ -10,7 +10,7 @@ const locale = localStorage.getItem('locale') || 'tw'
 
 const i18n = new VueI18n({
     locale,
-    messages:[en,tw]
+    messages:{en,tw}
 })
 
 export default i18n
