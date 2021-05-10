@@ -1,18 +1,15 @@
 <template>
     <el-container :class="classObj">
-        <div/>
-        <sidebar />
-        <el-container>
-            <el-header>
-                <nav-bar />
+        <div v-if="sidebar.opened && device === 'mobile'" class="drawer-bg" @click="handleClickOutside"/>
+        <sidebar class="sidebar-container"/>
+        <el-container class="main-container">
+            <el-header height="47px">
+                <nav-bar/>
             </el-header>
             <el-main>
                 <app-main/>
             </el-main>
         </el-container>
-        <el-button @click="logout">
-            asd
-        </el-button>
     </el-container>
 </template>
 
@@ -20,6 +17,7 @@
     import AppMain from './components/appmain'
     import NavBar from './components/navbar'
     import Sidebar from './components/sidebar'
+    import resizeHandler from "./mixins/resizeHandler";
     export default {
         name: "Layout",
         components:{
@@ -27,6 +25,7 @@
             NavBar,
             Sidebar
         },
+        mixins:[resizeHandler],
         computed:{
             sidebar(){
                 return this.$store.state.app.sidebar
@@ -44,14 +43,21 @@
             }
         },
         methods:{
-            logout(){
-                this.$store.dispatch('user/logout')
-                this.$router.push('/login')
+            handleClickOutside(){
+                this.$store.dispatch('app/closeSidebar',{withoutAnimation:false})
             }
         }
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .drawer-bg{
+        background-color: #000;
+        opacity: 0.3;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        position: absolute;
+        z-index: 999;
+    }
 </style>
